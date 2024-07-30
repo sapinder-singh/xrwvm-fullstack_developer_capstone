@@ -48,6 +48,7 @@ app.get('/fetchReviews', async (req, res) => {
 
 // Express route to fetch reviews by a particular dealer
 app.get('/fetchReviews/dealer/:id', async (req, res) => {
+    console.log("running /fetchReviews/dealer/:id in app.js")
   try {
     const documents = await Reviews.find({dealership: req.params.id});
     res.json(documents);
@@ -59,6 +60,8 @@ app.get('/fetchReviews/dealer/:id', async (req, res) => {
 // Express route to fetch all dealerships
 app.get('/fetchDealers', async (req, res) => {
     //Write your code here
+    console.log('Running /fetchDealers in app.js')
+
     try {
         const documents = await Dealerships.find();
         res.json(documents);
